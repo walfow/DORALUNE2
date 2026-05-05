@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doralune - Cidade da Felicidade</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+    body {
+      font-family: 'Comic Neue', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #f0d6ff, #fff0b3);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #fceabb; /* cor neutra para destacar o banner */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    header img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      background-color: #cc99ff;
+      padding: 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: transform 0.2s;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .city-info {
+      background-color: #fff0b3;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .characters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .character-card {
+      background: linear-gradient(135deg, #ffb3ff, #ffff99);
+      border-radius: 20px;
+      width: 200px;
+      padding: 20px;
+      box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .character-card:hover {
+      transform: scale(1.05);
+      box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .character-card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #b266ff, #ffcc66);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner da logo -->
+  <header>
+    <img src="banner_doralune.png" alt="Banner Doralune">
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#personagens">Personagens</a>
+  </nav>
+
+  <section id="sobre" class="city-info">
+    <h2>Bem-vindo a Doralune!</h2>
+    <p>Doralune é uma das quatro cidades encantadoras do planeta Trufa, um mundo inteiro feito de doces! Nossa cidade representa a <strong>felicidade</strong> e é famosa por suas festas, risadas e energia positiva. Aqui, tudo é colorido, doce e cheio de diversão.</p>
+  </section>
+
+  <section id="personagens">
+    <h2>Conheça nossos personagens</h2>
+    <div class="characters" id="characters-container">
+      <!-- Personagens serão adicionados via JavaScript -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Doralune - Um mundo de doces e alegria
+  </footer>
+
+  <script>
+    const personagens = [
+      {
+        nome: "Keiki",
+        descricao: "O faz-tudo da cidade e um bolo de festa muito animado!",
+        imagem: "https://via.placeholder.com/150/FFCC99/000000?text=Keiki"
+      },
+      {
+        nome: "Louy",
+        descricao: "Estilista talentosa e irmã de Fred, cheia de energia e criatividade.",
+        imagem: "https://via.placeholder.com/150/FF99FF/000000?text=Louy"
+      },
+      {
+        nome: "Fred",
+        descricao: "Streamer famoso e irmão de Louy, divertido e carismático.",
+        imagem: "https://via.placeholder.com/150/99CCFF/000000?text=Fred"
+      },
+      {
+        nome: "Claudy",
+        descricao: "Filho do prefeito de Doralune e um pudim muito encantador!",
+        imagem: "https://via.placeholder.com/150/FFCCFF/000000?text=Claudy"
+      }
+    ];
+
+    const container = document.getElementById('characters-container');
+
+    personagens.forEach(personagem => {
+      const card = document.createElement('div');
+      card.className = 'character-card';
+      card.innerHTML = `
+        <img src="${personagem.imagem}" alt="${personagem.nome}">
+        <h3>${personagem.nome}</h3>
+        <p>${personagem.descricao}</p>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
